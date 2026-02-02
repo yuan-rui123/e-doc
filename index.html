@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人图书馆</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        h1 i {
+            color: #3498db;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+        
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .book-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .book-cover {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .book-card:hover .book-cover {
+            filter: brightness(1.05);
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .book-category {
+            display: inline-block;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        
+        .book-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .book-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover {
+            background-color: #d5dbdb;
+        }
+        
+        .filter-btn.active {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            grid-column: 1 / -1;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #bdc3c7;
+        }
+        
+        @media (max-width: 768px) {
+            .library-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .library-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .stat-item {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-reader"></i> 我的个人图书馆</h1>
+            <p class="subtitle">收藏我读过的书籍、文章和在线资源</p>
+            <div class="stats">
+                <div class="stat-item"><i class="fas fa-book"></i> 总藏书: <span id="total-books">12</span></div>
+                <div class="stat-item"><i class="fas fa-folder-open"></i> 分类: <span id="total-categories">5</span></div>
+                <div class="stat-item"><i class="fas fa-clock"></i> 最近更新: 2023年10月</div>
+            </div>
+        </header>
+        
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">全部</button>
+            <button class="filter-btn" data-category="技术">技术</button>
+            <button class="filter-btn" data-category="文学">文学</button>
+            <button class="filter-btn" data-category="设计">设计</button>
+            <button class="filter-btn" data-category="科学">科学</button>
+            <button class="filter-btn" data-category="生活">生活</button>
+        </div>
+        
+        <div class="library-grid" id="library-container">
+            <!-- 图书卡片将通过JavaScript动态生成 -->
+        </div>
+        
+        <footer>
+            <p>© 2023 个人图书馆</p>
+            <p>总计 <span id="footer-book-count">12</span> 本藏书</p>
+        </footer>
+    </div>
+
+    <script>
+        const libraryData = [
+            {
+                title: "JavaScript高级程序设计",
+                category: "技术",
+                cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript"
+            },
+            {
+                title: "百年孤独",
+                category: "文学",
+                cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://book.douban.com/subject/6082808/"
+            },
+            {
+                title: "设计心理学",
+                category: "设计",
+                cover: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.interaction-design.org/literature/topics/design-psychology"
+            },
+            {
+                title: "时间简史",
+                category: "科学",
+                cover: "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.hawking.org.uk/"
+            },
+            {
+                title: "高效能人士的七个习惯",
+                category: "生活",
+                cover: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.franklincovey.com/the-7-habits/"
+            },
+            {
+                title: "React实战",
+                category: "技术",
+                cover: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://reactjs.org/"
+            },
+            {
+                title: "追风筝的人",
+                category: "文学",
+                cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://khaledhosseini.com/books/the-kite-runner/"
+            },
+            {
+                title: "配色设计原理",
+                category: "设计",
+                cover: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://color.adobe.com/create/color-wheel"
+            },
+            {
+                title: "人类简史",
+                category: "科学",
+                cover: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.ynharari.com/book/sapiens/"
+            },
+            {
+                title: "断舍离",
+                category: "生活",
+                cover: "https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.goodreads.com/book/show/40780346-goodbye-things"
+            },
+            {
+                title: "Python编程从入门到实践",
+                category: "技术",
+                cover: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.python.org/"
+            },
+            {
+                title: "小王子",
+                category: "文学",
+                cover: "https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                link: "https://www.antoinedesaintexupery.com/"
+            }
+        ];
+
+        // 页面加载完成后初始化图书馆
+        document.addEventListener('DOMContentLoaded', function() {
+            const libraryContainer = document.getElementById('library-container');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const totalBooksElement = document.getElementById('total-books');
+            const footerBookCountElement = document.getElementById('footer-book-count');
+            const totalCategoriesElement = document.getElementById('total-categories');
+            
+            // 计算分类数量
+            const categories = [...new Set(libraryData.map(book => book.category))];
+            totalCategoriesElement.textContent = categories.length;
+            
+            // 初始化显示所有图书
+            displayBooks(libraryData);
+            
+            // 更新图书总数
+            totalBooksElement.textContent = libraryData.length;
+            footerBookCountElement.textContent = libraryData.length;
+            
+            // 为筛选按钮添加事件监听器
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的active类
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // 为当前点击的按钮添加active类
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // 根据筛选条件显示图书
+                    if (category === 'all') {
+                        displayBooks(libraryData);
+                    } else {
+                        const filteredBooks = libraryData.filter(book => book.category === category);
+                        displayBooks(filteredBooks);
+                    }
+                });
+            });
+            
+            // 显示图书的函数
+            function displayBooks(books) {
+                libraryContainer.innerHTML = '';
+                
+                if (books.length === 0) {
+                    libraryContainer.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-book-open"></i>
+                            <h3>该分类下暂无图书</h3>
+                            <p>请尝试其他分类或添加新的图书</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                books.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.className = 'book-card';
+                    
+                    bookCard.innerHTML = `
+                        <img src="${book.cover}" alt="${book.title}" class="book-cover" onclick="window.open('${book.link}', '_blank')">
+                        <div class="book-info">
+                            <h3 class="book-title">${book.title}</h3>
+                            <span class="book-category">${book.category}</span>
+                            <br>
+                            <a href="${book.link}" target="_blank" class="book-link">
+                                <i class="fas fa-external-link-alt"></i> 查看详情
+                            </a>
+                        </div>
+                    `;
+                    
+                    libraryContainer.appendChild(bookCard);
+                });
+            }
+        });
+        
+        // 添加新书的示例函数（可在控制台调用）
+        function addNewBook(title, category, cover, link) {
+            libraryData.push({title, category, cover, link});
+            
+            // 重新显示所有图书
+            const libraryContainer = document.getElementById('library-container');
+            const totalBooksElement = document.getElementById('total-books');
+            const footerBookCountElement = document.getElementById('footer-book-count');
+            
+            // 更新图书总数
+            totalBooksElement.textContent = libraryData.length;
+            footerBookCountElement.textContent = libraryData.length;
+            
+            // 重新计算分类数量
+            const categories = [...new Set(libraryData.map(book => book.category))];
+            document.getElementById('total-categories').textContent = categories.length;
+            
+            // 重新显示图书
+            displayBooks(libraryData);
+        }
+    </script>
+</body>
+</html>
