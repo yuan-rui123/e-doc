@@ -43,7 +43,7 @@ def get_bitable_records():
 
 def save_to_json(data):
     """将数据保存为 JSON 文件"""
-    output_path = os.path.join('c:/Users/yuanrui/Desktop/python/', 'books.json')
+    output_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'public', 'data', 'books.json')
     
     # 添加更新时间
     data['last_updated'] = datetime.now().isoformat()
