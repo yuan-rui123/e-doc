@@ -245,35 +245,35 @@
             else
                 return bookTitle;
         }
-        function gettitle2(bookTitle){
-            if(bookTitle == null)
+        function getcategory(category){
+            if(category == null)
                 return "其他";
             else
-                return bookTitle;
+                return category;
         }
-        function gettitle3(bookTitle){
-            if(bookTitle == null)
+        function getcover(coverurl){
+            if(coverurl == null)
                 return "https://qcloud.dpfile.com/pc/h0jK_DfiFV_fQjL3CQpOVgRTnPIjwQlmZHNHjRv2n3Yrg3bZmogVH6Ln8ywR4Guo.jpg";
             else
-                return bookTitle;
+                return coverurl;
         }
-        function gettitle4(bookTitle){
-            if(bookTitle == null)
+        function getlink(link){
+            if(link == null)
                 return "错误";
             else
-                return bookTitle;
+                return link;
         }
-        function gettitle5(bookTitle){
-            if(bookTitle == null)
+        function getauthor(author){
+            if(author == null)
                 return "匿名";
             else
-                return bookTitle;
+                return author;
         }
-        function gettitle6(bookTitle){
-            if(bookTitle == null)
+        function getdoctime(doctime){
+            if(doctime == null)
                 return "未知";
             else
-                return bookTitle;
+                return doctime;
         }
         fetch('public/books.json')
         .then(response => response.json())
@@ -282,11 +282,16 @@
                 data.data.items.forEach((item, index) => {
                     //console.log(item.fields.title, item.fields.category, item.fields.cover, item.fields.link);
                     let link = null
+					let coverlink = null
                     if(item.fields.link == null)
                         link = null;
                     else
                         link = item.fields.link.link;
-                    libraryData.push({title:gettitle(item.fields.title), category:gettitle2(item.fields.category), cover:gettitle3(item.fields.cover), link:gettitle4(link),author:gettitle5(item.fields.author),time:gettitle6(item.fields.time)});
+					if(item.fields.cover == null)
+                        coverlink = null;
+                    else
+                        coverlink = item.fields.cover.link;
+                    libraryData.push({title:gettitle(item.fields.title), category:getcategory(item.fields.category), cover:getcover(coverlink), link:getlink(link),author:get (item.fields.author),time:getdoctime(item.fields.time)});
 				    
                 });
                 addNewBook()
