@@ -115,7 +115,7 @@ def download_image(url, token, save_dir):
         # 如果文件已存在，直接返回路径
         if os.path.exists(local_path):
             print(f"Image already exists: {filename}")
-            return os.path.join('/images/books', filename)
+            return os.path.join('/public/images/books', filename)
         
         # 下载图片
         headers = {"Authorization": f"Bearer {token}"}
@@ -134,7 +134,7 @@ def download_image(url, token, save_dir):
         compression_ratio = (1 - compressed_size / original_size) * 100 if original_size > 0 else 0
         print(f"Downloaded: {filename} (Original: {original_size:.1f}KB, Compressed: {compressed_size:.1f}KB, Saved: {compression_ratio:.1f}%)")
         
-        return os.path.join('/images/books', filename)
+        return os.path.join('/public/images/books', filename)
     except Exception as e:
         print(f"Error downloading image {url}: {str(e)}")
         return None
