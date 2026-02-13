@@ -5,70 +5,77 @@
     "items": [
       {
         "fields": {
-          "书名": "百年孤独",
-          "作者": "哥伦比亚作家加西亚·马尔克斯",
-          "出版日期": "1967年",
-          "地址": {
+          "author": "加西亚·马尔克斯",
+          "category": "文学",
+          "cover": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/boxcnok0LsULD8FdcQwwL7uyGAg/?preview_type=16",
+          "link": {
             "link": "https://jcnfu7024k6k.feishu.cn/wiki/U8RgwYvxlitG9pkd1MXcEPEXnee",
             "text": "调试"
           },
-          "简介": "小说通过描述马孔多小镇和布恩迪亚家族七代人的传奇故事，展现了拉丁美洲百年来的历史变迁，并融入了神话、传说和奇幻元素，是魔幻现实主义文学的典范",
-          "评价": "被公认为20世纪最杰出的长篇小说之一，其魔幻现实主义手法深刻影响了世界文学，对上世纪80年代以来的中国当代文学创作也产生了重要影响"
+          "time": "1967年",
+          "title": "百年孤独"
         },
         "id": "recoBHzoJb",
         "record_id": "recoBHzoJb"
       },
       {
         "fields": {
-          "书名": "杀死一只知更鸟",
-          "作者": "美国作家哈珀·李的长篇小说",
-          "出版日期": "1960年",
-          "地址": {
-            "link": "https://jcnfu7024k6k.feishu.cn/wiki/ZATbwmflCiI03JkiecAcQkp5nxe",
-            "text": "联动调试"
-          },
-          "简介": "以20世纪30年代美国南方为背景，通过律师阿蒂克斯·芬奇为被诬告的黑人汤姆·鲁滨逊辩护的故事，以及其子女的视角，探讨了种族不公、偏见与成长等严肃议题，文风却温暖而深刻",
-          "评价": "1961年获得普利策小说奖，被翻译成四十多种语言，全球销量超过三千万册，常被列为美国中学必读书目，成为探讨正义与勇气的经典成长小说"
+          "author": "哈珀·李",
+          "category": "文学",
+          "time": "1960年",
+          "title": "杀死一只知更鸟"
         },
         "id": "rec8Hy6RqJ",
         "record_id": "rec8Hy6RqJ"
       },
       {
         "fields": {
-          "书名": "悲惨世界",
-          "作者": "法国作家维克多·雨果的长篇巨著",
-          "出版日期": "1862年",
-          "简介": "小说围绕主人公冉·阿让从苦役犯到救赎者的人生轨迹，描绘了19世纪法国广阔的社会生活画卷，深刻探讨了法律、道德、正义与人道主义精神",
-          "评价": "世界文学史上的不朽经典，被誉为“人类苦难的百科全书”，它融合了现实主义与浪漫主义，被翻译成34种语言，全球累计销量超8000万册，并多次被改编为电影和经典音乐剧"
+          "author": "维克多·雨果",
+          "category": "文学",
+          "time": "1862年",
+          "title": "悲惨世界"
         },
         "id": "recnXdb5Sy",
         "record_id": "recnXdb5Sy"
       },
       {
         "fields": {
-          "书名": "博弈论",
-          "作者": "朱·弗登博格 / 让·梯若尔",
-          "出版日期": "2015年5月1日",
-          "简介": "该书几乎涵盖了除演化博弈之外的所有博弈论理论与方法，包含大量实例与习题，深入浅出",
-          "评价": "被誉为博弈论领域的“集大成之作”，代表了该领域发展的最高水平。是经济学研究生和高年级本科生的经典教材，也是相关研究者的必备参考书，在豆瓣获得8.3分"
+          "author": "朱·弗登博格 / 让·梯若尔",
+          "category": "科学",
+          "time": "2015年5月1日",
+          "title": "博弈论"
         },
         "id": "recHn37nCk",
         "record_id": "recHn37nCk"
       },
       {
         "fields": {
-          "书名": "时间简史",
-          "作者": "英国物理学家史蒂芬·霍金创作的科普著作",
-          "出版日期": "1988年",
-          "简介": "用通俗易懂的语言介绍了宇宙的起源、黑洞、时间旅行等深奥的物理学和宇宙学前沿知识，旨在让普通读者也能理解这些复杂的理论",
-          "评价": "被誉为“有史以来最著名的科普著作之一”。截至2014年，已在全球被翻译成近40种语言，累计销量超过2500万册。也有评论称其为“当代物理学家关于宇宙构成以及演化理论的权威性总结”"
+          "author": "史蒂芬·霍金",
+          "category": "科学",
+          "time": "1988年",
+          "title": "时间简史"
         },
         "id": "rec1ZOL2g3",
         "record_id": "rec1ZOL2g3"
+      },
+      {
+        "fields": {
+          "author": "兰州大学",
+          "category": "生活",
+          "cover": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/v2/cover/CsKobeCXPoVKhSx1lINcM4fRndb/?fallback_source=1&height=1280&mount_node_token=FQdFdSsN3omxFFxUo9yc83NznoV&mount_point=docx_image&policy=equal&width=1280",
+          "link": {
+            "link": "https://dslab-sec.feishu.cn/wiki/NHaxwX1nFiMUGBkQ7IUcfRwWnqg?from=from_copylink",
+            "text": "OH俱乐部指导老师推文"
+          },
+          "time": "2025年12月",
+          "title": "兰州大学OpenHarmony技术俱乐部"
+        },
+        "id": "recvb184VhxIET",
+        "record_id": "recvb184VhxIET"
       }
     ],
-    "total": 5
+    "total": 6
   },
   "msg": "success",
-  "last_updated": "2026-02-08T11:17:52.639698"
+  "last_updated": "2026-02-13T04:44:56.312888"
 }
