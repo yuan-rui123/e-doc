@@ -156,8 +156,8 @@ def process_records(records, token):
         #    for cover in covers:
         #        if 'url' in cover:
                     # 下载图片并获取本地路径
-                    local_path = download_image(item['fields']['cover'], token, save_dir)
-                    item['fields']['cover'] =local_path
+                    local_path = download_image(item['fields']['cover']['link'], token, save_dir)
+                    item['fields']['cover']['link'] =local_path
         #            if local_path:
         #                new_cover = cover.copy()
          #               new_cover['local_path'] = local_path
@@ -185,7 +185,7 @@ def main():
         token = get_tenant_access_token()
         if token:
             # 处理记录并下载图片
-            #records = process_records(records, token)
+            records = process_records(records, token)
             save_to_json(records)
         else:
             print("Failed to get access token for downloading images")
