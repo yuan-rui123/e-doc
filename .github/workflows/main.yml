@@ -46,5 +46,5 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add public/books.json
+        git add public/books.json public/images/books/*
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update books data [skip ci]" && git push)
