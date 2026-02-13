@@ -7,7 +7,10 @@
         "fields": {
           "author": "加西亚·马尔克斯",
           "category": "文学",
-          "cover": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/boxcnok0LsULD8FdcQwwL7uyGAg/?preview_type=16",
+          "cover": {
+            "link": "https://open.feishu.cn/open-apis/drive/v1/medias/boxcnok0LsULD8FdcQwwL7uyGAg/download",
+            "text": "https://open.feishu.cn/open-apis/drive/v1/medias/boxcnok0LsULD8FdcQwwL7uyGAg/download"
+          },
           "link": {
             "link": "https://jcnfu7024k6k.feishu.cn/wiki/U8RgwYvxlitG9pkd1MXcEPEXnee",
             "text": "调试"
@@ -17,16 +20,6 @@
         },
         "id": "recoBHzoJb",
         "record_id": "recoBHzoJb"
-      },
-      {
-        "fields": {
-          "author": "哈珀·李",
-          "category": "文学",
-          "time": "1960年",
-          "title": "杀死一只知更鸟"
-        },
-        "id": "rec8Hy6RqJ",
-        "record_id": "rec8Hy6RqJ"
       },
       {
         "fields": {
@@ -62,7 +55,10 @@
         "fields": {
           "author": "兰州大学",
           "category": "生活",
-          "cover": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/v2/cover/CsKobeCXPoVKhSx1lINcM4fRndb/?fallback_source=1&height=1280&mount_node_token=FQdFdSsN3omxFFxUo9yc83NznoV&mount_point=docx_image&policy=equal&width=1280",
+          "cover": {
+            "link": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download",
+            "text": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download"
+          },
           "link": {
             "link": "https://dslab-sec.feishu.cn/wiki/NHaxwX1nFiMUGBkQ7IUcfRwWnqg?from=from_copylink",
             "text": "OH俱乐部指导老师推文"
@@ -72,10 +68,20 @@
         },
         "id": "recvb184VhxIET",
         "record_id": "recvb184VhxIET"
+      },
+      {
+        "fields": {
+          "author": "哈珀·李",
+          "category": "文学",
+          "time": "1960年",
+          "title": "杀死一只知更鸟"
+        },
+        "id": "rec8Hy6RqJ",
+        "record_id": "rec8Hy6RqJ"
       }
     ],
     "total": 6
   },
   "msg": "success",
-  "last_updated": "2026-02-13T05:04:32.197901"
+  "last_updated": "2026-02-13T13:20:32.511652"
 }
