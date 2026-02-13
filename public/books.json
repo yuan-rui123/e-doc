@@ -8,8 +8,8 @@
           "author": "加西亚·马尔克斯",
           "category": "文学",
           "cover": {
-            "link": null,
-            "text": "https://open.feishu.cn/open-apis/drive/v1/medias/boxcnok0LsULD8FdcQwwL7uyGAg/download"
+            "link": "/public/images/books/c31c0c18c4309cd0be476db70eb9faea.webp",
+            "text": "https://open.feishu.cn/open-apis/drive/v1/medias/U6MHb7INBo0wyGx5N7hcJzt6nPh/download"
           },
           "link": {
             "link": "https://jcnfu7024k6k.feishu.cn/wiki/U8RgwYvxlitG9pkd1MXcEPEXnee",
@@ -56,7 +56,7 @@
           "author": "兰州大学",
           "category": "生活",
           "cover": {
-            "link": "/images/books/4afd068275ed43d3a6b1a93980f8116d.webp",
+            "link": "/public/images/books/4afd068275ed43d3a6b1a93980f8116d.webp",
             "text": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download"
           },
           "link": {
@@ -83,5 +83,5 @@
     "total": 6
   },
   "msg": "success",
-  "last_updated": "2026-02-13T15:16:50.359306"
+  "last_updated": "2026-02-13T15:33:41.280159"
 }
