@@ -291,8 +291,7 @@
                         coverlink = null;
                     else
                         coverlink = item.fields.cover.link;
-					console.log(coverlink);
-                    libraryData.push({title:gettitle(item.fields.title), category:getcategory(item.fields.category), cover:getcover(coverlink), link:getlink(link),author:get (item.fields.author),time:getdoctime(item.fields.time)});
+					libraryData.push({title:gettitle(item.fields.title), category:getcategory(item.fields.category), cover:getcover(coverlink), link:getlink(link),author:getauthor(item.fields.author),time:getdoctime(item.fields.time)});
 				    
                 });
                 addNewBook()
