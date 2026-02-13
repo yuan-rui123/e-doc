@@ -150,19 +150,20 @@ def process_records(records, token):
     
     # 处理每条记录
     for item in records['data']['items']:
-        if 'cover' in item['fields'] and item['fields']['cover']:
-            covers = item['fields']['cover']
-            new_covers = []
-            for cover in covers:
-                if 'url' in cover:
+        # if 'cover' in item['fields'] and item['fields']['cover']:
+        #    covers = item['fields']['cover']
+        #    new_covers = []
+        #    for cover in covers:
+        #        if 'url' in cover:
                     # 下载图片并获取本地路径
-                    local_path = download_image(cover['url'], token, save_dir)
-                    if local_path:
-                        new_cover = cover.copy()
-                        new_cover['local_path'] = local_path
-                        new_covers.append(new_cover)
-            if new_covers:
-                item['fields']['cover'] = new_covers
+                    local_path = download_image(item['fields']['cover'], token, save_dir)
+                    item['fields']['cover'] =local_path
+        #            if local_path:
+        #                new_cover = cover.copy()
+         #               new_cover['local_path'] = local_path
+        #                new_covers.append(new_cover)
+        #    if new_covers:
+        #        item['fields']['cover'] = new_covers
     
     return records
 
