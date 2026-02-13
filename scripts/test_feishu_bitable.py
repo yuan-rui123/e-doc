@@ -150,7 +150,7 @@ def process_records(records, token):
     
     # 处理每条记录
     for item in records['data']['items']:
-        # if 'cover' in item['fields'] and item['fields']['cover']:
+         if 'link' in item['fields'] and item['fields']['cover']:
         #    covers = item['fields']['cover']
         #    new_covers = []
         #    for cover in covers:
