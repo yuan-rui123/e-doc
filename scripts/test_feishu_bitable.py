@@ -185,7 +185,7 @@ def main():
         token = get_tenant_access_token()
         if token:
             # 处理记录并下载图片
-            records = process_records(records, token)
+            #records = process_records(records, token)
             save_to_json(records)
         else:
             print("Failed to get access token for downloading images")
