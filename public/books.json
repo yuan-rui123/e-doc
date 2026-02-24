@@ -78,10 +78,28 @@
         },
         "id": "rec8Hy6RqJ",
         "record_id": "rec8Hy6RqJ"
+      },
+      {
+        "fields": {
+          "author": "熊斌",
+          "category": "科学",
+          "cover": {
+            "link": "public/images/books/4afd068275ed43d3a6b1a93980f8116d.webp",
+            "text": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download"
+          },
+          "link": {
+            "link": "https://jcnfu7024k6k.feishu.cn/wiki/ZATbwmflCiI03JkiecAcQkp5nxe",
+            "text": "联动调试"
+          },
+          "time": "2023",
+          "title": "奥林匹克"
+        },
+        "id": "recvc7zORkZ8fh",
+        "record_id": "recvc7zORkZ8fh"
       }
     ],
-    "total": 6
+    "total": 7
   },
   "msg": "success",
-  "last_updated": "2026-02-24T05:58:15.126610"
+  "last_updated": "2026-02-24T06:07:35.004612"
 }
