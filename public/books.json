@@ -8,7 +8,7 @@
           "author": "加西亚·马尔克斯",
           "category": "文学",
           "cover": {
-            "link": "public/images/books/c31c0c18c4309cd0be476db70eb9faea.webp",
+            "link": "https://open.feishu.cn/open-apis/drive/v1/medias/U6MHb7INBo0wyGx5N7hcJzt6nPh/download",
             "text": "https://open.feishu.cn/open-apis/drive/v1/medias/U6MHb7INBo0wyGx5N7hcJzt6nPh/download"
           },
           "link": {
@@ -56,7 +56,7 @@
           "author": "兰州大学",
           "category": "生活",
           "cover": {
-            "link": "public/images/books/4afd068275ed43d3a6b1a93980f8116d.webp",
+            "link": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download",
             "text": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download"
           },
           "link": {
@@ -84,7 +84,7 @@
           "author": "熊斌",
           "category": "科学",
           "cover": {
-            "link": "public/images/books/4afd068275ed43d3a6b1a93980f8116d.webp",
+            "link": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download",
             "text": "https://open.feishu.cn/open-apis/drive/v1/medias/CsKobeCXPoVKhSx1lINcM4fRndb/download"
           },
           "link": {
@@ -96,10 +96,24 @@
         },
         "id": "recvc7zORkZ8fh",
         "record_id": "recvc7zORkZ8fh"
+      },
+      {
+        "fields": {
+          "author": "123",
+          "category": "生活",
+          "link": {
+            "link": "https://jcnfu7024k6k.feishu.cn/wiki/ZATbwmflCiI03JkiecAcQkp5nxe",
+            "text": "联动调试"
+          },
+          "time": "123",
+          "title": "123"
+        },
+        "id": "recvcdfvsTfQLA",
+        "record_id": "recvcdfvsTfQLA"
       }
     ],
-    "total": 7
+    "total": 8
   },
   "msg": "success",
-  "last_updated": "2026-02-24T06:07:35.004612"
+  "last_updated": "2026-02-25T05:22:08.040139"
 }
